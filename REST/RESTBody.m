@@ -216,20 +216,6 @@
 
 #pragma mark JSON:
 
-
-// Conditional compilation for JSONKit and/or NSJSONSerialization.
-// If the app supports OS versions prior to NSJSONSerialization, we'll do a runtime
-// test for it and use it if present, otherwise fall back to JSONKit.
-#ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
-#define USE_JSONKIT (__IPHONE_OS_VERSION_MIN_REQUIRED < 50000)
-#else
-#define USE_JSONKIT (MAC_OS_X_VERSION_MIN_REQUIRED < 1070)
-#endif
-
-#if USE_JSONKIT
-#import "JSONKit.h"
-#endif
-
 #if (MAC_OS_X_VERSION_MAX_ALLOWED < 1070 || (defined(__IPHONE_OS_VERSION_MAX_ALLOWED) &&  __IPHONE_OS_VERSION_MAX_ALLOWED < 50000))
 // Building against earlier SDK that doesn't contain NSJSONSerialization.h.
 // So declare the necessary bits here (copied from the 10.7 SDK):
@@ -248,34 +234,16 @@ enum {
 
 @implementation RESTBody (JSON)
 
-#if USE_JSONKIT
-static Class sJSONSerialization;
-
-+ (void) initialize {
-    if (self == [RESTBody class]) {
-        sJSONSerialization = NSClassFromString(@"NSJSONSerialization");
-    }
-}
-#else
 #define sJSONSerialization NSJSONSerialization
-#endif
 
 
 + (NSData*) dataWithJSONObject: (id)obj {
-#if USE_JSONKIT
-    if (!sJSONSerialization)
-        return [obj JSONData];
-#endif
     return [sJSONSerialization dataWithJSONObject: obj 
                                           options: 0
                                             error: NULL];
 }
 
 + (NSString*) stringWithJSONObject: (id)obj {
-#if USE_JSONKIT
-    if (!sJSONSerialization)
-        return [obj JSONString];
-#endif
     NSData* data = [sJSONSerialization dataWithJSONObject: obj                                               
                                                   options: 0
                                                     error: NULL];
@@ -285,10 +253,6 @@ static Class sJSONSerialization;
 }
 
 + (NSString*) prettyStringWithJSONObject: (id)obj {
-#if USE_JSONKIT
-    if (!sJSONSerialization)
-        return [obj JSONStringWithOptions: JKSerializeOptionPretty error: nil];
-#endif
     NSData* data = [sJSONSerialization dataWithJSONObject: obj                                               
                                                   options: NSJSONReadingAllowFragments
                                                             | NSJSONWritingPrettyPrinted
@@ -300,29 +264,12 @@ static Class sJSONSerialization;
 
 
 + (id) JSONObjectWithData: (NSData*)data {
-#if USE_JSONKIT
-    if (!sJSONSerialization) {
-#if TARGET_OS_IPHONE
-        JSONDecoder* decoder = [[JSONDecoder alloc] init];
-        id object = [decoder objectWithData: data];
-        [decoder release];
-        return object;
-#else
-        return [data objectFromJSONData];
-#endif
-    }
-#endif
-    
     return [sJSONSerialization JSONObjectWithData: data 
                                           options: 0
                                             error: NULL];
 }
 
 + (id) JSONObjectWithString: (NSString*)string {
-#if USE_JSONKIT
-    if (!sJSONSerialization)
-        return [string objectFromJSONString];
-#endif
     NSData* data = [string dataUsingEncoding: NSUTF8StringEncoding];
     return [sJSONSerialization JSONObjectWithData: data 
                                           options: 0
