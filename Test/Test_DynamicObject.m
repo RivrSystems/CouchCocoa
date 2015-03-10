@@ -32,10 +32,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [_dict release];
-    [super dealloc];
-}
 
 - (id) getValueOfProperty: (NSString*)property {
     return [_dict objectForKey: property];
@@ -104,7 +100,6 @@
     STAssertEquals(test.intey, 0, nil);
     STAssertEquals(test.doubley, 0.0, nil);
     STAssertEquals(test.booley, (bool)false, nil);
-    [test release];
 }
 
 
@@ -129,7 +124,6 @@
                               [NSNumber numberWithDouble: 123.456], @"doubley",
                               [NSNumber numberWithInt: -6789], @"intey", nil];
     STAssertEqualObjects(test->_dict, expected, nil);
-    [test release];
 }
 
 

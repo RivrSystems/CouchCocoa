@@ -113,7 +113,7 @@
     CouchRevision* rev1 = doc.currentRevision;
     STAssertTrue([rev1.revisionID hasPrefix: @"1-"], nil);
     
-    NSMutableDictionary* properties2 = [[properties mutableCopy] autorelease];
+    NSMutableDictionary* properties2 = [properties mutableCopy];
     [properties2 setObject: [NSNumber numberWithInt: 4567] forKey: @"tag"];
     RESTOperation* op = [rev1 putProperties: properties2];
     AssertWait(op);
@@ -161,7 +161,6 @@
         [properties setObject: @"updated!" forKey: @"misc"];
         [revisions addObject: revision];
         [revisionProperties addObject: properties];
-        [properties release];
     }
     
     AssertWait([_db putChanges: revisionProperties toRevisions: revisions]);
@@ -292,11 +291,11 @@
                                 [NSNumber numberWithInt:1], @"tag",
                                 nil];
     CouchDocument* doc = [self createDocumentWithProperties: properties];
-    NSString* rev1ID = [[doc.currentRevisionID copy] autorelease];
+    NSString* rev1ID = [doc.currentRevisionID copy];
     NSLog(@"1st revision: %@", rev1ID);
     STAssertTrue([rev1ID hasPrefix: @"1-"], @"1st revision looks wrong: '%@'", rev1ID);
     STAssertEqualObjects(doc.userProperties, properties, nil);
-    properties = [doc.properties.mutableCopy autorelease];
+    properties = doc.properties.mutableCopy;
     [properties setObject: [NSNumber numberWithInt: 2] forKey: @"tag"];
     STAssertFalse([properties isEqual: doc.properties], nil);
     AssertWait([doc putProperties: properties]);

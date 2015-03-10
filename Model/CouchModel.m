@@ -13,7 +13,7 @@
 
 
 @interface CouchModel ()
-@property (readwrite, retain) CouchDocument* document;
+@property (readwrite, strong) CouchDocument* document;
 @property (readwrite) bool needsSave;
 - (NSDictionary*) attachmentDataToSave;
 @end
@@ -62,7 +62,7 @@
                  self, document, model);
     } else if (self != [CouchModel class]) {
         // If invoked on a subclass of CouchModel, create an instance of that subclass:
-        model = [[[self alloc] initWithDocument: document] autorelease];
+        model = [[self alloc] initWithDocument: document];
     } else {
         // If invoked on CouchModel itself, ask the factory to instantiate the appropriate class:
         model = [document.database.modelFactory modelForDocument: document];
@@ -75,11 +75,6 @@
 {
     COUCHLOG2(@"%@ dealloc", self);
     _document.modelObject = nil;
-    [_document release];
-    [_properties release];
-    [_changedNames release];
-    [_changedAttachments release];
-    [super dealloc];
 }
 
 
@@ -99,14 +94,13 @@
 - (void) setDocument:(CouchDocument *)document {
     NSAssert(!_document && document, @"Can't change or clear document");
     NSAssert(document.modelObject == nil, @"Document already has a model");
-    _document = [document retain];
+    _document = document;
     _document.modelObject = self;
 }
 
 
 - (void) detachFromDocument {
     _document.modelObject = nil;
-    [_document release];
     _document = nil;
 }
 
@@ -158,7 +152,7 @@
         additionalProperties = @{};
     }
     
-    NSMutableDictionary* properties = [[additionalProperties mutableCopy] autorelease];
+    NSMutableDictionary* properties = [additionalProperties mutableCopy];
     [properties setValue:[NSNumber numberWithBool:TRUE] forKey:@"_deleted"];
     [properties setValue:[self getValueOfProperty:@"_id"] forKey:@"_id"];
     [properties setValue:[self getValueOfProperty:@"_rev"] forKey:@"_rev"];
@@ -198,7 +192,6 @@
         [removeKeys minusSet: _changedNames];
         [_properties removeObjectsForKeys: removeKeys.allObjects];
     } else {
-        [_properties release];
         _properties = nil;
     }
     
@@ -247,11 +240,8 @@
         //[NSApp presentError: op.error];
     } else {
         _isNew = NO;
-        [_properties release];
         _properties = nil;
-        [_changedNames release];
         _changedNames = nil;
-        [_changedAttachments release];
         _changedAttachments = nil;
     }
 }
@@ -330,7 +320,7 @@
         [properties setValue: [self externalizePropertyValue: value] forKey: key];
     }
     [properties setValue: self.attachmentDataToSave forKey: @"_attachments"];
-    return [properties autorelease];
+    return properties;
 }
 
 
@@ -494,15 +484,10 @@
 
 - (void) addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context {
     [super addObserver: observer forKeyPath: keyPath options: options context: context];
-    if (observer != self)
-        [self retain];
 }
 
 - (void) removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath {
     [super removeObserver: observer forKeyPath: keyPath];
-    if (observer != self)
-        [self retain];
-    [self release];
 }
 
 
@@ -514,7 +499,7 @@
     if (!_changedAttachments)
         return names;
     
-    NSMutableArray* nuNames = names ? [[names mutableCopy] autorelease] : [NSMutableArray array];
+    NSMutableArray* nuNames = names ? [names mutableCopy] : [NSMutableArray array];
     for (NSString* name in _changedAttachments.allKeys) {
         CouchAttachment* attach = [_changedAttachments objectForKey: name];
         if ([attach isKindOfClass: [CouchAttachment class]]) {
@@ -550,9 +535,9 @@
                                   [NSNumber numberWithUnsignedLong: body.length], @"length",
                                   contentType, @"content_type",
                                   nil];
-        attach = [[[CouchAttachment alloc] initWithParent: (_document.currentRevision ?: _document)
+        attach = [[CouchAttachment alloc] initWithParent: (_document.currentRevision ?: _document)
                                                      name: name
-                                                 metadata: metadata] autorelease];
+                                                 metadata: metadata];
     } else if (![self attachmentNamed: name]) {
         return nil;
     }
@@ -575,7 +560,7 @@
     if (!_changedAttachments)
         return attachments;
     
-    NSMutableDictionary* nuAttach = attachments ? [[attachments mutableCopy] autorelease]
+    NSMutableDictionary* nuAttach = attachments ? [attachments mutableCopy]
                                                 : [NSMutableDictionary dictionary];
     for (NSString* name in _changedAttachments.allKeys) {
         CouchAttachment* attach = [_changedAttachments objectForKey: name];

@@ -12,9 +12,9 @@
 /** A UITableView data source driven by a CouchLiveQuery. */
 @interface CouchUITableSource : NSObject <UITableViewDataSource>
 
-@property (nonatomic, retain) IBOutlet UITableView* tableView;
+@property (nonatomic, strong) IBOutlet UITableView* tableView;
 
-@property (retain) CouchLiveQuery* query;
+@property (strong) CouchLiveQuery* query;
 
 /** Rebuilds the table from the query's current .rows property. */
 -(void) reloadFromQuery;

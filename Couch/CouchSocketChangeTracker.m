@@ -52,13 +52,13 @@ enum {
     CFReadStreamRef cfInputStream = NULL;
     CFWriteStreamRef cfOutputStream = NULL;
     CFStreamCreatePairWithSocketToHost(NULL,
-                                       (CFStringRef)_databaseURL.host,
+                                       (__bridge CFStringRef)_databaseURL.host,
                                        _databaseURL.port.intValue ?: 80,
                                        &cfInputStream, &cfOutputStream);
     if (!cfInputStream)
         return NO;
-    _trackingInput = (NSInputStream*)cfInputStream;
-    _trackingOutput = (NSOutputStream*)cfOutputStream;
+    _trackingInput = (__bridge NSInputStream*)cfInputStream;
+    _trackingOutput = (__bridge NSOutputStream*)cfOutputStream;
 #else
     [NSStream getStreamsToHost: [NSHost hostWithName: _databaseURL.host]
                           port: _databaseURL.port.intValue ?: 80
@@ -86,16 +86,12 @@ enum {
 - (void) stop {
     COUCHLOG2(@"%@: stop", self);
     [_trackingInput close];
-    [_trackingInput release];
     _trackingInput = nil;
     
     [_trackingOutput close];
-    [_trackingOutput release];
     _trackingOutput = nil;
     
-    [_trackingRequest release];
     _trackingRequest = nil;
-    [_inputBuffer release];
     _inputBuffer = nil;
     
     [super stop];
@@ -108,9 +104,9 @@ enum {
     if (!crlf)
         return NO;  // Wait till we have a complete line
     ptrdiff_t lineLength = crlf - start;
-    NSString* line = [[[NSString alloc] initWithBytes: start
+    NSString* line = [[NSString alloc] initWithBytes: start
                                                length: lineLength
-                                             encoding: NSUTF8StringEncoding] autorelease];
+                                             encoding: NSUTF8StringEncoding];
     COUCHLOG3(@"%@: LINE: \"%@\"", self, line);
     if (line) {
         switch (_state) {
@@ -183,7 +179,6 @@ enum {
                 NSAssert(written == strlen(buffer), @"Output stream didn't write entire request");
                 // FIX: It's unlikely but possible that the stream won't take the entire request; need to
                 // write the rest later.
-                [_trackingRequest release];
                 _trackingRequest = nil;
             }
             break;

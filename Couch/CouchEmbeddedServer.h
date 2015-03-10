@@ -43,7 +43,7 @@
 @property (readonly) BOOL running;
 
 /** If the server fails to start up, this will give the reason why. */
-@property (readonly, retain) NSError* error;
+@property (readonly, strong) NSError* error;
 
 @end
 
