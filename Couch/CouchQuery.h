@@ -142,7 +142,7 @@ typedef enum {
     NSArray* _rows;
     NSUInteger _totalCount;
     NSUInteger _nextRow;
-    NSUInteger _sequenceNumber;
+    id _sequenceNumber;
 }
 
 /** The number of rows returned in this enumerator */
@@ -152,7 +152,7 @@ typedef enum {
 @property (readonly) NSUInteger totalCount;
 
 /** The database's current sequenceNumber at the time the view was generated. */
-@property (readonly) NSUInteger sequenceNumber;
+@property (readonly) id sequenceNumber;
 
 /** The next result row. This is the same as -nextObject but with a checked return type. */
 - (CouchQueryRow*) nextRow;
@@ -204,5 +204,5 @@ typedef enum {
 
 /** The local sequence number of the associated doc/revision.
     Valid only if the 'sequences' and 'prefetch' properties were set in the query; otherwise returns 0. */
-@property (readonly) UInt64 localSequence;
+@property (readonly) id localSequence;
 @end

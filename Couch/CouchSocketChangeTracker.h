@@ -12,13 +12,17 @@
 /** CouchChangeTracker implementation that uses a raw TCP socket to read the chunk-mode HTTP response. */
 @interface CouchSocketChangeTracker : CouchChangeTracker
 {
-    @private
+@private
     NSInputStream* _trackingInput;
-    NSOutputStream* _trackingOutput;
-    NSString* _trackingRequest;
-    int _retryCount;
     
     NSMutableData* _inputBuffer;
-    int _state;
+    NSMutableData* _changeBuffer;
+    CFHTTPMessageRef _unauthResponse;
+    NSURLCredential* _credential;
+    CFAbsoluteTime _startTime;
+    bool _gotResponseHeaders;
+    bool _parsing;
+    bool _inputAvailable;
+    bool _atEOF;
 }
 @end

@@ -411,19 +411,17 @@ static const NSUInteger kDocRetainLimit = 50;
 #pragma mark TRACKING CHANGES:
 
 
-- (NSUInteger) lastSequenceNumber {
+- (id) lastSequenceNumber {
     if (!_lastSequenceNumberKnown) {
         _lastSequenceNumberKnown = YES;
         // Don't know the current sequence number, so ask for it:
-        id seqObj = [[self GET].responseBody.fromJSON objectForKey: @"update_seq"];  // synchronous
-        if ([seqObj isKindOfClass: [NSNumber class]])
-            _lastSequenceNumber = [seqObj intValue];
+        _lastSequenceNumber = [[self GET].responseBody.fromJSON objectForKey: @"update_seq"];  // synchronous
     }
     return _lastSequenceNumber;
 }
 
 
-- (void) setLastSequenceNumber:(NSUInteger)lastSequenceNumber {
+- (void) setLastSequenceNumber:(id)lastSequenceNumber {
     _lastSequenceNumber = lastSequenceNumber;
     _lastSequenceNumberKnown = YES;
 }
@@ -441,19 +439,14 @@ static const NSUInteger kDocRetainLimit = 50;
 
 // Part of <CouchChangeTrackerClient> protocol
 - (void) changeTrackerReceivedChange: (NSDictionary*)change {
-    // Get & check sequence number:
-    NSNumber* sequenceObj = $castIf(NSNumber, [change objectForKey: @"seq"]);
-    if (!sequenceObj)
-        return;
-    NSUInteger sequence = [sequenceObj intValue];
-    if (sequence <= _lastSequenceNumber)
-        return;
+    
+    id sequence = change[@"seq"];
     
     if (_busyDocuments.count) {
         // Don't process changes while I have pending PUT/POST/DELETEs out. Wait till they finish,
         // so I don't think the change is external.
-        COUCHLOG2(@"CouchDatabase deferring change (seq %lu) till operations finish", 
-              (unsigned long)sequence);
+        COUCHLOG2(@"CouchDatabase deferring change (seq %@) till operations finish",
+              sequence);
         if (!_deferredChanges)
             _deferredChanges = [[NSMutableArray alloc] init];
         [_deferredChanges addObject: change];
@@ -518,6 +511,7 @@ static const NSUInteger kDocRetainLimit = 50;
     if (track && !_tracker) {
         _tracker = [[CouchChangeTracker alloc] initWithDatabaseURL: self.URL
                                                               mode: kContinuous
+                                                         conflicts: YES
                                                       lastSequence: self.lastSequenceNumber
                                                             client: self];
         [_tracker start];

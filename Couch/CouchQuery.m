@@ -270,7 +270,7 @@
         
             // If this query isn't up-to-date (race condition where the db updated again after sending
             // the response), start another fetch.
-            if (rows.sequenceNumber > 0 && rows.sequenceNumber < self.database.lastSequenceNumber)
+            if (rows.sequenceNumber  && rows.sequenceNumber == self.database.lastSequenceNumber)
                 [self start];
         }
     }
@@ -293,7 +293,7 @@
 - (id) initWithDatabase: (CouchDatabase*)database
                    rows: (NSArray*)rows
              totalCount: (NSUInteger)totalCount
-         sequenceNumber: (NSUInteger)sequenceNumber
+         sequenceNumber: (id)sequenceNumber
 {
     NSParameterAssert(database);
     self = [super init];
@@ -313,7 +313,7 @@
     return [self initWithDatabase: db
                              rows: $castIf(NSArray, [result objectForKey: @"rows"])
                        totalCount: [[result objectForKey: @"total_rows"] intValue]
-                   sequenceNumber: [[result objectForKey: @"update_seq"] intValue]];
+                   sequenceNumber: [result objectForKey: @"update_seq"]];
 }
 
 - (id) copyWithZone: (NSZone*)zone {
@@ -438,9 +438,8 @@
 }
 
 
-- (UInt64) localSequence {
-    id seq = [self.documentProperties objectForKey: @"_local_seq"];
-    return $castIf(NSNumber, seq).unsignedLongLongValue;
+- (id) localSequence {
+    return [self.documentProperties objectForKey: @"_local_seq"];
 }
 
 

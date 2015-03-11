@@ -16,24 +16,12 @@
 #import "REST.h"
 #import "RESTCache.h"
 
-
 void RESTWarn(NSString* format, ...) __attribute__((format(__NSString__, 1, 2)));;
-
-#define Warn RESTWarn
 
 extern BOOL gRESTWarnRaisesException;
 
-
-// Safe dynamic cast that returns nil if the object is not the expected class:
-#define $castIf(CLASSNAME,OBJ)      ((CLASSNAME*)(RESTCastIf([CLASSNAME class],(OBJ))))
-#define $castIfArrayOf(ITEMCLASSNAME,OBJ) RESTCastArrayOf([ITEMCLASSNAME class],(OBJ)))
 id RESTCastIf(Class,id);
 id RESTCastIfArrayOf(Class,id);
-
-
-// Object equality that correctly returns YES when both are nil:
-static inline BOOL $equal(id a, id b) {return a==b || [a isEqual: b];}
-
 
 @interface RESTOperation ()
 + (NSError*) errorWithHTTPStatus: (int)httpStatus

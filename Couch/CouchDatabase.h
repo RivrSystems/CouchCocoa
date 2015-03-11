@@ -28,7 +28,7 @@ typedef NSString* (^CouchDocumentPathMap)(NSString* documentID);
     RESTCache* _docCache;
     NSCountedSet* _busyDocuments;
     CouchChangeTracker* _tracker;
-    NSUInteger _lastSequenceNumber;
+    NSString * _lastSequenceNumber;
     BOOL _lastSequenceNumberKnown;
     id _onChangeBlock;
     NSMutableArray* _deferredChanges;
@@ -142,7 +142,7 @@ typedef NSString* (^CouchDocumentPathMap)(NSString* documentID);
 /** The last change sequence number received from the database.
     If this is not known yet, the current value will be fetched via a synchronous query.
     You can save the current value on quit, and restore it on relaunch before enabling change tracking, to get notifications of all changes that have occurred in the meantime. */
-@property NSUInteger lastSequenceNumber;
+@property id lastSequenceNumber;
 
 #pragma mark REPLICATION & SYNCHRONIZATION:
 
