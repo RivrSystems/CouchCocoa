@@ -28,7 +28,7 @@ typedef NSString* (^CouchDocumentPathMap)(NSString* documentID);
     RESTCache* _docCache;
     NSCountedSet* _busyDocuments;
     CouchChangeTracker* _tracker;
-    NSUInteger _lastSequenceNumber;
+    NSString * _lastSequenceNumber;
     BOOL _lastSequenceNumberKnown;
     id _onChangeBlock;
     NSMutableArray* _deferredChanges;
@@ -45,7 +45,7 @@ typedef NSString* (^CouchDocumentPathMap)(NSString* documentID);
 + (CouchDatabase*) databaseNamed: (NSString*)databaseName
                  onServerWithURL: (NSURL*)serverURL;
 
-@property (readonly) CouchServer* server;
+@property (weak, readonly) CouchServer* server;
 
 /** Allows retrieving documents from the CouchDatabase using a different path from the documentID. This is useful for
     accessing a document using a Couch rewrite. The result of the CouchDocumentPathMap is the path relative to the database. */
@@ -142,7 +142,7 @@ typedef NSString* (^CouchDocumentPathMap)(NSString* documentID);
 /** The last change sequence number received from the database.
     If this is not known yet, the current value will be fetched via a synchronous query.
     You can save the current value on quit, and restore it on relaunch before enabling change tracking, to get notifications of all changes that have occurred in the meantime. */
-@property NSUInteger lastSequenceNumber;
+@property id lastSequenceNumber;
 
 #pragma mark REPLICATION & SYNCHRONIZATION:
 
@@ -183,7 +183,7 @@ typedef NSString* (^CouchDocumentPathMap)(NSString* documentID);
 - (CouchPersistentReplication*) replicationToDatabaseAtURL: (NSURL*)targetURL;
 
 /** All currently configured persistent replications involving this database, as CouchPersistentReplication objects. */
-@property (readonly) NSArray* replications;
+@property (weak, readonly) NSArray* replications;
 
 @end
 

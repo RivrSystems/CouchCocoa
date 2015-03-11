@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2725993913D8B43F006E391E /* CouchCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27CDEBF113C67C9B00C979BB /* CouchCocoa.framework */; };
-		2725993A13D8CEB7006E391E /* CouchCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27CDEBF113C67C9B00C979BB /* CouchCocoa.framework */; };
+		2725993913D8B43F006E391E /* CouchCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27CDEBF113C67C9B00C979BB /* CouchCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		2725993A13D8CEB7006E391E /* CouchCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27CDEBF113C67C9B00C979BB /* CouchCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2739BF2D13BCE53B004829CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2739BF2C13BCE53B004829CD /* Foundation.framework */; };
 		2739BF3713BCE53C004829CD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 272E9D8313A2EBDF009F18E9 /* SenTestingKit.framework */; };
 		2739BF3913BCE53C004829CD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2739BF3813BCE53C004829CD /* UIKit.framework */; };
@@ -42,16 +42,10 @@
 		27911B721411A7C100ABD31B /* Test_DynamicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 27911B701411A7C100ABD31B /* Test_DynamicObject.m */; };
 		27911B751411A8C700ABD31B /* CouchTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 27911B741411A8C700ABD31B /* CouchTestCase.m */; };
 		27911B761411A8C700ABD31B /* CouchTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 27911B741411A8C700ABD31B /* CouchTestCase.m */; };
-		279276EE14215D5600002958 /* RESTBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 279276EC14215D5600002958 /* RESTBase64.h */; };
-		279276F014215D5600002958 /* RESTBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 279276ED14215D5600002958 /* RESTBase64.m */; };
-		279276F114215D5600002958 /* RESTBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 279276ED14215D5600002958 /* RESTBase64.m */; };
 		27938C61140C01D200117675 /* CouchDynamicObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 27DB82201408202E00E57444 /* CouchDynamicObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27938C63140C01DC00117675 /* CouchModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 27DB82231408225300E57444 /* CouchModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2795994F140A02DB001C168A /* Test_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 2795994E140A02DB001C168A /* Test_Model.m */; };
 		27959950140A02DB001C168A /* Test_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 2795994E140A02DB001C168A /* Test_Model.m */; };
-		279906D2149930DA003D4338 /* CouchConnectionChangeTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 279906CE149930DA003D4338 /* CouchConnectionChangeTracker.h */; };
-		279906D4149930DA003D4338 /* CouchConnectionChangeTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 279906CF149930DA003D4338 /* CouchConnectionChangeTracker.m */; };
-		279906D5149930DA003D4338 /* CouchConnectionChangeTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 279906CF149930DA003D4338 /* CouchConnectionChangeTracker.m */; };
 		279906D6149930DA003D4338 /* CouchSocketChangeTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = 279906D0149930DA003D4338 /* CouchSocketChangeTracker.h */; };
 		279906D8149930DA003D4338 /* CouchSocketChangeTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 279906D1149930DA003D4338 /* CouchSocketChangeTracker.m */; };
 		279906D9149930DA003D4338 /* CouchSocketChangeTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 279906D1149930DA003D4338 /* CouchSocketChangeTracker.m */; };
@@ -148,6 +142,78 @@
 		27EF14B31396DD3B0052913E /* AddressesDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27EF14B21396DD3B0052913E /* AddressesDemo.xib */; };
 		27FA35E31623E25A007501CA /* CouchTouchDBDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 279CA780156FE4B700871563 /* CouchTouchDBDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27FA35E51623E27A007501CA /* CouchEmbeddedServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2783A0C4156D616800DC8692 /* CouchEmbeddedServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		295E53681AAF6516002EA6A4 /* CouchStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53661AAF6516002EA6A4 /* CouchStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		295E53691AAF6516002EA6A4 /* CouchStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53671AAF6516002EA6A4 /* CouchStatus.m */; };
+		295E536C1AAF668E002EA6A4 /* CouchJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E536A1AAF668E002EA6A4 /* CouchJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		295E536D1AAF668E002EA6A4 /* CouchJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E536B1AAF668E002EA6A4 /* CouchJSON.m */; };
+		295E53701AB04F6B002EA6A4 /* CouchRemoteRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E536E1AB04F6B002EA6A4 /* CouchRemoteRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		295E53711AB04F6B002EA6A4 /* CouchRemoteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E536F1AB04F6B002EA6A4 /* CouchRemoteRequest.m */; };
+		295E53A41AB051FD002EA6A4 /* CollectionUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53741AB051FD002EA6A4 /* CollectionUtils.h */; };
+		295E53A51AB051FD002EA6A4 /* CollectionUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53741AB051FD002EA6A4 /* CollectionUtils.h */; };
+		295E53A61AB051FD002EA6A4 /* CollectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53751AB051FD002EA6A4 /* CollectionUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E53AC1AB051FD002EA6A4 /* ExceptionUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53781AB051FD002EA6A4 /* ExceptionUtils.h */; };
+		295E53AD1AB051FD002EA6A4 /* ExceptionUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53781AB051FD002EA6A4 /* ExceptionUtils.h */; };
+		295E53AE1AB051FD002EA6A4 /* ExceptionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53791AB051FD002EA6A4 /* ExceptionUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E53B21AB051FD002EA6A4 /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E537B1AB051FD002EA6A4 /* Logging.h */; };
+		295E53B31AB051FD002EA6A4 /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E537B1AB051FD002EA6A4 /* Logging.h */; };
+		295E53B41AB051FD002EA6A4 /* Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E537C1AB051FD002EA6A4 /* Logging.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E53BA1AB051FD002EA6A4 /* MYBlockUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E537F1AB051FD002EA6A4 /* MYBlockUtils.h */; };
+		295E53BB1AB051FD002EA6A4 /* MYBlockUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E537F1AB051FD002EA6A4 /* MYBlockUtils.h */; };
+		295E53BC1AB051FD002EA6A4 /* MYBlockUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53801AB051FD002EA6A4 /* MYBlockUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E53C61AB051FD002EA6A4 /* MYErrorUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53851AB051FD002EA6A4 /* MYErrorUtils.h */; };
+		295E53C71AB051FD002EA6A4 /* MYErrorUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53851AB051FD002EA6A4 /* MYErrorUtils.h */; };
+		295E53C81AB051FD002EA6A4 /* MYErrorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53861AB051FD002EA6A4 /* MYErrorUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E53CE1AB051FD002EA6A4 /* MYRegexUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53891AB051FD002EA6A4 /* MYRegexUtils.h */; };
+		295E53CF1AB051FD002EA6A4 /* MYRegexUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53891AB051FD002EA6A4 /* MYRegexUtils.h */; };
+		295E53D01AB051FD002EA6A4 /* MYRegexUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E538A1AB051FD002EA6A4 /* MYRegexUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E53D21AB051FD002EA6A4 /* MYStreamUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E538B1AB051FD002EA6A4 /* MYStreamUtils.h */; };
+		295E53D31AB051FD002EA6A4 /* MYStreamUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E538B1AB051FD002EA6A4 /* MYStreamUtils.h */; };
+		295E53D41AB051FD002EA6A4 /* MYStreamUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E538C1AB051FD002EA6A4 /* MYStreamUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E53DA1AB051FD002EA6A4 /* MYURLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E538F1AB051FD002EA6A4 /* MYURLUtils.h */; };
+		295E53DB1AB051FD002EA6A4 /* MYURLUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E538F1AB051FD002EA6A4 /* MYURLUtils.h */; };
+		295E53DC1AB051FD002EA6A4 /* MYURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53901AB051FD002EA6A4 /* MYURLUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E53DE1AB051FD002EA6A4 /* MYUtilities.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 295E53911AB051FD002EA6A4 /* MYUtilities.xcconfig */; };
+		295E53DF1AB051FD002EA6A4 /* MYUtilities.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 295E53911AB051FD002EA6A4 /* MYUtilities.xcconfig */; };
+		295E53E01AB051FD002EA6A4 /* MYUtilities_Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 295E53921AB051FD002EA6A4 /* MYUtilities_Debug.xcconfig */; };
+		295E53E11AB051FD002EA6A4 /* MYUtilities_Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 295E53921AB051FD002EA6A4 /* MYUtilities_Debug.xcconfig */; };
+		295E53E41AB051FD002EA6A4 /* MYUtilities_Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 295E53941AB051FD002EA6A4 /* MYUtilities_Release.xcconfig */; };
+		295E53E51AB051FD002EA6A4 /* MYUtilities_Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 295E53941AB051FD002EA6A4 /* MYUtilities_Release.xcconfig */; };
+		295E53F21AB051FD002EA6A4 /* Test.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E539B1AB051FD002EA6A4 /* Test.h */; };
+		295E53F31AB051FD002EA6A4 /* Test.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E539B1AB051FD002EA6A4 /* Test.h */; };
+		295E53F41AB051FD002EA6A4 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E539C1AB051FD002EA6A4 /* Test.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E53F81AB051FD002EA6A4 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53A01AB051FD002EA6A4 /* GTMDefines.h */; };
+		295E53F91AB051FD002EA6A4 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53A01AB051FD002EA6A4 /* GTMDefines.h */; };
+		295E53FA1AB051FD002EA6A4 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53A11AB051FD002EA6A4 /* GTMNSData+zlib.h */; };
+		295E53FB1AB051FD002EA6A4 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53A11AB051FD002EA6A4 /* GTMNSData+zlib.h */; };
+		295E53FC1AB051FD002EA6A4 /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53A21AB051FD002EA6A4 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E54001AB05301002EA6A4 /* CouchAuthorizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A5A0DB1AAF4B36000625BC /* CouchAuthorizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		295E54011AB05311002EA6A4 /* CouchAuthorizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A5A0DC1AAF4B36000625BC /* CouchAuthorizer.m */; };
+		295E54021AB05328002EA6A4 /* CouchJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E536A1AAF668E002EA6A4 /* CouchJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		295E54031AB05331002EA6A4 /* CouchJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E536B1AAF668E002EA6A4 /* CouchJSON.m */; };
+		295E54041AB05340002EA6A4 /* CouchMisc.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A5A0E31AAF4C7D000625BC /* CouchMisc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		295E54051AB0534D002EA6A4 /* CouchMisc.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A5A0E41AAF4C7D000625BC /* CouchMisc.m */; };
+		295E54061AB0535F002EA6A4 /* CouchRemoteRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E536E1AB04F6B002EA6A4 /* CouchRemoteRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		295E54071AB05368002EA6A4 /* CouchRemoteRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E536F1AB04F6B002EA6A4 /* CouchRemoteRequest.m */; };
+		295E54081AB0537E002EA6A4 /* CouchStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 295E53661AAF6516002EA6A4 /* CouchStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		295E54091AB05382002EA6A4 /* CouchStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53671AAF6516002EA6A4 /* CouchStatus.m */; };
+		295E540A1AB053B7002EA6A4 /* RESTBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A5A0DF1AAF4BF2000625BC /* RESTBase64.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		295E540B1AB053BD002EA6A4 /* RESTBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A5A0E01AAF4BF2000625BC /* RESTBase64.m */; };
+		295E540C1AB053FD002EA6A4 /* CollectionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53751AB051FD002EA6A4 /* CollectionUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E540E1AB053FD002EA6A4 /* ExceptionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53791AB051FD002EA6A4 /* ExceptionUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E540F1AB053FD002EA6A4 /* Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E537C1AB051FD002EA6A4 /* Logging.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E54111AB053FD002EA6A4 /* MYBlockUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53801AB051FD002EA6A4 /* MYBlockUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E54141AB053FD002EA6A4 /* MYErrorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53861AB051FD002EA6A4 /* MYErrorUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E54161AB053FD002EA6A4 /* MYRegexUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E538A1AB051FD002EA6A4 /* MYRegexUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E54171AB053FD002EA6A4 /* MYStreamUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E538C1AB051FD002EA6A4 /* MYStreamUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E54191AB053FD002EA6A4 /* MYURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53901AB051FD002EA6A4 /* MYURLUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E541C1AB053FD002EA6A4 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E539C1AB051FD002EA6A4 /* Test.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		295E541E1AB05409002EA6A4 /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53A21AB051FD002EA6A4 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		29A5A0DD1AAF4B36000625BC /* CouchAuthorizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A5A0DB1AAF4B36000625BC /* CouchAuthorizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29A5A0DE1AAF4B36000625BC /* CouchAuthorizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A5A0DC1AAF4B36000625BC /* CouchAuthorizer.m */; };
+		29A5A0E11AAF4BF2000625BC /* RESTBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A5A0DF1AAF4BF2000625BC /* RESTBase64.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29A5A0E21AAF4BF2000625BC /* RESTBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A5A0E01AAF4BF2000625BC /* RESTBase64.m */; };
+		29A5A0E51AAF4C7D000625BC /* CouchMisc.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A5A0E31AAF4C7D000625BC /* CouchMisc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29A5A0E61AAF4C7D000625BC /* CouchMisc.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A5A0E41AAF4C7D000625BC /* CouchMisc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,8 +309,6 @@
 		27911B701411A7C100ABD31B /* Test_DynamicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test_DynamicObject.m; sourceTree = "<group>"; };
 		27911B731411A8C700ABD31B /* CouchTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouchTestCase.h; sourceTree = "<group>"; };
 		27911B741411A8C700ABD31B /* CouchTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouchTestCase.m; sourceTree = "<group>"; };
-		279276EC14215D5600002958 /* RESTBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTBase64.h; sourceTree = "<group>"; };
-		279276ED14215D5600002958 /* RESTBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTBase64.m; sourceTree = "<group>"; };
 		2795994E140A02DB001C168A /* Test_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test_Model.m; sourceTree = "<group>"; };
 		279906CE149930DA003D4338 /* CouchConnectionChangeTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouchConnectionChangeTracker.h; sourceTree = "<group>"; };
 		279906CF149930DA003D4338 /* CouchConnectionChangeTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouchConnectionChangeTracker.m; sourceTree = "<group>"; };
@@ -298,6 +362,42 @@
 		27EF148B1396D8CC0052913E /* DemoAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoAppController.m; sourceTree = "<group>"; };
 		27EF14B21396DD3B0052913E /* AddressesDemo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressesDemo.xib; sourceTree = "<group>"; };
 		27EFB7BD13CF66FD00FA1485 /* ShoppingDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ShoppingDemo-Info.plist"; path = "Demo/ShoppingDemo-Info.plist"; sourceTree = SOURCE_ROOT; };
+		295E53661AAF6516002EA6A4 /* CouchStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouchStatus.h; sourceTree = "<group>"; };
+		295E53671AAF6516002EA6A4 /* CouchStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouchStatus.m; sourceTree = "<group>"; };
+		295E536A1AAF668E002EA6A4 /* CouchJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouchJSON.h; sourceTree = "<group>"; };
+		295E536B1AAF668E002EA6A4 /* CouchJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouchJSON.m; sourceTree = "<group>"; };
+		295E536E1AB04F6B002EA6A4 /* CouchRemoteRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouchRemoteRequest.h; sourceTree = "<group>"; };
+		295E536F1AB04F6B002EA6A4 /* CouchRemoteRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouchRemoteRequest.m; sourceTree = "<group>"; };
+		295E53741AB051FD002EA6A4 /* CollectionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionUtils.h; sourceTree = "<group>"; };
+		295E53751AB051FD002EA6A4 /* CollectionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionUtils.m; sourceTree = "<group>"; };
+		295E53781AB051FD002EA6A4 /* ExceptionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExceptionUtils.h; sourceTree = "<group>"; };
+		295E53791AB051FD002EA6A4 /* ExceptionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExceptionUtils.m; sourceTree = "<group>"; };
+		295E537B1AB051FD002EA6A4 /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
+		295E537C1AB051FD002EA6A4 /* Logging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logging.m; sourceTree = "<group>"; };
+		295E537F1AB051FD002EA6A4 /* MYBlockUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBlockUtils.h; sourceTree = "<group>"; };
+		295E53801AB051FD002EA6A4 /* MYBlockUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBlockUtils.m; sourceTree = "<group>"; };
+		295E53851AB051FD002EA6A4 /* MYErrorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYErrorUtils.h; sourceTree = "<group>"; };
+		295E53861AB051FD002EA6A4 /* MYErrorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYErrorUtils.m; sourceTree = "<group>"; };
+		295E53891AB051FD002EA6A4 /* MYRegexUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYRegexUtils.h; sourceTree = "<group>"; };
+		295E538A1AB051FD002EA6A4 /* MYRegexUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYRegexUtils.m; sourceTree = "<group>"; };
+		295E538B1AB051FD002EA6A4 /* MYStreamUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYStreamUtils.h; sourceTree = "<group>"; };
+		295E538C1AB051FD002EA6A4 /* MYStreamUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYStreamUtils.m; sourceTree = "<group>"; };
+		295E538F1AB051FD002EA6A4 /* MYURLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYURLUtils.h; sourceTree = "<group>"; };
+		295E53901AB051FD002EA6A4 /* MYURLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYURLUtils.m; sourceTree = "<group>"; };
+		295E53911AB051FD002EA6A4 /* MYUtilities.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MYUtilities.xcconfig; sourceTree = "<group>"; };
+		295E53921AB051FD002EA6A4 /* MYUtilities_Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MYUtilities_Debug.xcconfig; sourceTree = "<group>"; };
+		295E53941AB051FD002EA6A4 /* MYUtilities_Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MYUtilities_Release.xcconfig; sourceTree = "<group>"; };
+		295E539B1AB051FD002EA6A4 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		295E539C1AB051FD002EA6A4 /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		295E53A01AB051FD002EA6A4 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		295E53A11AB051FD002EA6A4 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSData+zlib.h"; sourceTree = "<group>"; };
+		295E53A21AB051FD002EA6A4 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSData+zlib.m"; sourceTree = "<group>"; };
+		29A5A0DB1AAF4B36000625BC /* CouchAuthorizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouchAuthorizer.h; sourceTree = "<group>"; };
+		29A5A0DC1AAF4B36000625BC /* CouchAuthorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouchAuthorizer.m; sourceTree = "<group>"; };
+		29A5A0DF1AAF4BF2000625BC /* RESTBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTBase64.h; sourceTree = "<group>"; };
+		29A5A0E01AAF4BF2000625BC /* RESTBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTBase64.m; sourceTree = "<group>"; };
+		29A5A0E31AAF4C7D000625BC /* CouchMisc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouchMisc.h; sourceTree = "<group>"; };
+		29A5A0E41AAF4C7D000625BC /* CouchMisc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouchMisc.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +473,7 @@
 		08FB7794FE84155DC02AAC07 /* Couch */ = {
 			isa = PBXGroup;
 			children = (
+				295E53721AB051FD002EA6A4 /* Vendor */,
 				278B231E1391724E00DDD950 /* REST */,
 				08FB7795FE84155DC02AAC07 /* Couch */,
 				27DB821C14081FD000E57444 /* Model */,
@@ -391,36 +492,46 @@
 		08FB7795FE84155DC02AAC07 /* Couch */ = {
 			isa = PBXGroup;
 			children = (
-				278B22F1138F1F5F00DDD950 /* CouchServer.h */,
-				278B22F2138F1F5F00DDD950 /* CouchServer.m */,
-				27E9C61714A0EECC00F67966 /* CouchTouchDBServer.h */,
-				27E9C61814A0EECC00F67966 /* CouchTouchDBServer.m */,
-				2783A0C4156D616800DC8692 /* CouchEmbeddedServer.h */,
-				2783A0C5156D616800DC8692 /* CouchEmbeddedServer.m */,
-				278B22F4138F269200DDD950 /* CouchDatabase.h */,
-				278B22F5138F269200DDD950 /* CouchDatabase.m */,
-				279CA780156FE4B700871563 /* CouchTouchDBDatabase.h */,
-				279CA781156FE4B700871563 /* CouchTouchDBDatabase.m */,
-				278B22F7138F2AA600DDD950 /* CouchDocument.h */,
-				278B22F8138F2AA600DDD950 /* CouchDocument.m */,
-				2739BF2013BAB411004829CD /* CouchRevision.h */,
-				2739BF2113BAB412004829CD /* CouchRevision.m */,
+				279906DB149930E3003D4338 /* ChangeTracker */,
 				278B22FA138F320A00DDD950 /* CouchAttachment.h */,
 				278B22FB138F320A00DDD950 /* CouchAttachment.m */,
-				27BB781613A08B520069ABA7 /* CouchDesignDocument.h */,
-				27BB781713A08B520069ABA7 /* CouchDesignDocument.m */,
+				29A5A0DB1AAF4B36000625BC /* CouchAuthorizer.h */,
+				29A5A0DC1AAF4B36000625BC /* CouchAuthorizer.m */,
+				270A663C13A5B3DF00791F4A /* CouchCocoa.h */,
+				278B22F4138F269200DDD950 /* CouchDatabase.h */,
+				278B22F5138F269200DDD950 /* CouchDatabase.m */,
 				27CB654A143A746700EEA1F2 /* CouchDesignDocument_Embedded.h */,
 				27CB654B143A746700EEA1F2 /* CouchDesignDocument_Embedded.m */,
-				278B275E1394225600DDD950 /* CouchQuery.h */,
-				278B275F1394225600DDD950 /* CouchQuery.m */,
-				278B24CA1392EE3600DDD950 /* CouchResource.h */,
-				278B24CB1392EE3600DDD950 /* CouchResource.m */,
-				279CCBF013F9823F00C38C82 /* CouchReplication.h */,
-				279CCBF113F9823F00C38C82 /* CouchReplication.m */,
+				27BB781613A08B520069ABA7 /* CouchDesignDocument.h */,
+				27BB781713A08B520069ABA7 /* CouchDesignDocument.m */,
+				278B22F7138F2AA600DDD950 /* CouchDocument.h */,
+				278B22F8138F2AA600DDD950 /* CouchDocument.m */,
+				2783A0C4156D616800DC8692 /* CouchEmbeddedServer.h */,
+				2783A0C5156D616800DC8692 /* CouchEmbeddedServer.m */,
+				295E536A1AAF668E002EA6A4 /* CouchJSON.h */,
+				295E536B1AAF668E002EA6A4 /* CouchJSON.m */,
+				29A5A0E31AAF4C7D000625BC /* CouchMisc.h */,
+				29A5A0E41AAF4C7D000625BC /* CouchMisc.m */,
 				27E4DD0A141921E000A3D8F6 /* CouchPersistentReplication.h */,
 				27E4DD0B141921E000A3D8F6 /* CouchPersistentReplication.m */,
-				270A663C13A5B3DF00791F4A /* CouchCocoa.h */,
-				279906DB149930E3003D4338 /* ChangeTracker */,
+				278B275E1394225600DDD950 /* CouchQuery.h */,
+				278B275F1394225600DDD950 /* CouchQuery.m */,
+				295E536E1AB04F6B002EA6A4 /* CouchRemoteRequest.h */,
+				295E536F1AB04F6B002EA6A4 /* CouchRemoteRequest.m */,
+				279CCBF013F9823F00C38C82 /* CouchReplication.h */,
+				279CCBF113F9823F00C38C82 /* CouchReplication.m */,
+				278B24CA1392EE3600DDD950 /* CouchResource.h */,
+				278B24CB1392EE3600DDD950 /* CouchResource.m */,
+				2739BF2013BAB411004829CD /* CouchRevision.h */,
+				2739BF2113BAB412004829CD /* CouchRevision.m */,
+				278B22F1138F1F5F00DDD950 /* CouchServer.h */,
+				278B22F2138F1F5F00DDD950 /* CouchServer.m */,
+				295E53661AAF6516002EA6A4 /* CouchStatus.h */,
+				295E53671AAF6516002EA6A4 /* CouchStatus.m */,
+				279CA780156FE4B700871563 /* CouchTouchDBDatabase.h */,
+				279CA781156FE4B700871563 /* CouchTouchDBDatabase.m */,
+				27E9C61714A0EECC00F67966 /* CouchTouchDBServer.h */,
+				27E9C61814A0EECC00F67966 /* CouchTouchDBServer.m */,
 				27333BCB13B7E70100EF5A10 /* Internal */,
 			);
 			path = Couch;
@@ -486,8 +597,8 @@
 			children = (
 				27DA430413B659A900BBADB7 /* RESTInternal.h */,
 				27DA430513B659A900BBADB7 /* RESTInternal.m */,
-				279276EC14215D5600002958 /* RESTBase64.h */,
-				279276ED14215D5600002958 /* RESTBase64.m */,
+				29A5A0DF1AAF4BF2000625BC /* RESTBase64.h */,
+				29A5A0E01AAF4BF2000625BC /* RESTBase64.m */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -597,6 +708,61 @@
 			path = Demo;
 			sourceTree = "<group>";
 		};
+		295E53721AB051FD002EA6A4 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				295E53731AB051FD002EA6A4 /* MYUtilities */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		295E53731AB051FD002EA6A4 /* MYUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				295E53781AB051FD002EA6A4 /* ExceptionUtils.h */,
+				295E53791AB051FD002EA6A4 /* ExceptionUtils.m */,
+				295E537B1AB051FD002EA6A4 /* Logging.h */,
+				295E537C1AB051FD002EA6A4 /* Logging.m */,
+				295E53921AB051FD002EA6A4 /* MYUtilities_Debug.xcconfig */,
+				295E53941AB051FD002EA6A4 /* MYUtilities_Release.xcconfig */,
+				295E53911AB051FD002EA6A4 /* MYUtilities.xcconfig */,
+				295E53741AB051FD002EA6A4 /* CollectionUtils.h */,
+				295E53751AB051FD002EA6A4 /* CollectionUtils.m */,
+				295E539B1AB051FD002EA6A4 /* Test.h */,
+				295E539C1AB051FD002EA6A4 /* Test.m */,
+				295E537F1AB051FD002EA6A4 /* MYBlockUtils.h */,
+				295E53801AB051FD002EA6A4 /* MYBlockUtils.m */,
+				295E538B1AB051FD002EA6A4 /* MYStreamUtils.h */,
+				295E538C1AB051FD002EA6A4 /* MYStreamUtils.m */,
+				295E53851AB051FD002EA6A4 /* MYErrorUtils.h */,
+				295E53861AB051FD002EA6A4 /* MYErrorUtils.m */,
+				295E53891AB051FD002EA6A4 /* MYRegexUtils.h */,
+				295E538A1AB051FD002EA6A4 /* MYRegexUtils.m */,
+				295E538F1AB051FD002EA6A4 /* MYURLUtils.h */,
+				295E53901AB051FD002EA6A4 /* MYURLUtils.m */,
+				295E539E1AB051FD002EA6A4 /* vendor */,
+			);
+			path = MYUtilities;
+			sourceTree = "<group>";
+		};
+		295E539E1AB051FD002EA6A4 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				295E539F1AB051FD002EA6A4 /* google-toolbox-for-mac */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
+		295E539F1AB051FD002EA6A4 /* google-toolbox-for-mac */ = {
+			isa = PBXGroup;
+			children = (
+				295E53A01AB051FD002EA6A4 /* GTMDefines.h */,
+				295E53A11AB051FD002EA6A4 /* GTMNSData+zlib.h */,
+				295E53A21AB051FD002EA6A4 /* GTMNSData+zlib.m */,
+			);
+			path = "google-toolbox-for-mac";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -614,28 +780,43 @@
 				27CDEC2913C67D3500C979BB /* RESTResource.h in Headers */,
 				27CDEC2A13C67D3500C979BB /* RESTOperation.h in Headers */,
 				27CDEC2B13C67D3500C979BB /* RESTBody.h in Headers */,
+				295E53681AAF6516002EA6A4 /* CouchStatus.h in Headers */,
+				295E53A41AB051FD002EA6A4 /* CollectionUtils.h in Headers */,
 				27CDEC2C13C67D3500C979BB /* RESTCache.h in Headers */,
 				27CDEC2D13C67D3500C979BB /* REST.h in Headers */,
+				295E53F21AB051FD002EA6A4 /* Test.h in Headers */,
 				27CDEC2E13C67D3500C979BB /* CouchServer.h in Headers */,
+				29A5A0E11AAF4BF2000625BC /* RESTBase64.h in Headers */,
 				27E9C61914A0EECC00F67966 /* CouchTouchDBServer.h in Headers */,
+				295E53F81AB051FD002EA6A4 /* GTMDefines.h in Headers */,
+				295E53B21AB051FD002EA6A4 /* Logging.h in Headers */,
+				29A5A0E51AAF4C7D000625BC /* CouchMisc.h in Headers */,
 				27CDEC2F13C67D3500C979BB /* CouchDatabase.h in Headers */,
+				295E53DA1AB051FD002EA6A4 /* MYURLUtils.h in Headers */,
+				295E53C61AB051FD002EA6A4 /* MYErrorUtils.h in Headers */,
 				279CA782156FE4B700871563 /* CouchTouchDBDatabase.h in Headers */,
 				27CDEC3013C67D3500C979BB /* CouchDocument.h in Headers */,
 				27CDEC3113C67D3500C979BB /* CouchRevision.h in Headers */,
+				295E53FA1AB051FD002EA6A4 /* GTMNSData+zlib.h in Headers */,
 				27CDEC3213C67D3500C979BB /* CouchAttachment.h in Headers */,
+				295E53D21AB051FD002EA6A4 /* MYStreamUtils.h in Headers */,
+				295E53701AB04F6B002EA6A4 /* CouchRemoteRequest.h in Headers */,
 				27CDEC3313C67D3500C979BB /* CouchDesignDocument.h in Headers */,
 				27CB654C143A746700EEA1F2 /* CouchDesignDocument_Embedded.h in Headers */,
+				295E53BA1AB051FD002EA6A4 /* MYBlockUtils.h in Headers */,
+				29A5A0DD1AAF4B36000625BC /* CouchAuthorizer.h in Headers */,
 				27CDEC3413C67D3500C979BB /* CouchQuery.h in Headers */,
 				279CCBF213F9823F00C38C82 /* CouchReplication.h in Headers */,
 				27E4DD0C141921E000A3D8F6 /* CouchPersistentReplication.h in Headers */,
+				295E53AC1AB051FD002EA6A4 /* ExceptionUtils.h in Headers */,
+				295E53CE1AB051FD002EA6A4 /* MYRegexUtils.h in Headers */,
 				27CDEC3513C67D3500C979BB /* CouchResource.h in Headers */,
 				27DB82211408202E00E57444 /* CouchDynamicObject.h in Headers */,
 				27DB82251408225300E57444 /* CouchModel.h in Headers */,
 				27AE23AD147C95D3005AAB52 /* CouchModelFactory.h in Headers */,
 				27CDEC3613C67D3500C979BB /* CouchCocoa.h in Headers */,
-				279276EE14215D5600002958 /* RESTBase64.h in Headers */,
+				295E536C1AAF668E002EA6A4 /* CouchJSON.h in Headers */,
 				27D083B8143FBEEA0067702F /* CouchbaseCallbacks.h in Headers */,
-				279906D2149930DA003D4338 /* CouchConnectionChangeTracker.h in Headers */,
 				279906D6149930DA003D4338 /* CouchSocketChangeTracker.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,26 +828,43 @@
 				27EEA5B613D6052300D7ACA4 /* REST.h in Headers */,
 				27EEA5A913D604F500D7ACA4 /* RESTResource.h in Headers */,
 				27EEA5AA13D604F800D7ACA4 /* RESTOperation.h in Headers */,
+				295E54001AB05301002EA6A4 /* CouchAuthorizer.h in Headers */,
 				27EEA5AB13D604FC00D7ACA4 /* RESTBody.h in Headers */,
 				27EEA5AC13D6050000D7ACA4 /* RESTCache.h in Headers */,
+				295E53C71AB051FD002EA6A4 /* MYErrorUtils.h in Headers */,
+				295E53F31AB051FD002EA6A4 /* Test.h in Headers */,
 				27EEA5B513D6052000D7ACA4 /* CouchCocoa.h in Headers */,
 				27EEA5B013D6051100D7ACA4 /* CouchRevision.h in Headers */,
+				295E54081AB0537E002EA6A4 /* CouchStatus.h in Headers */,
 				27EEA5AF13D6050F00D7ACA4 /* CouchDocument.h in Headers */,
+				295E53F91AB051FD002EA6A4 /* GTMDefines.h in Headers */,
 				27EEA5B113D6051300D7ACA4 /* CouchAttachment.h in Headers */,
+				295E54061AB0535F002EA6A4 /* CouchRemoteRequest.h in Headers */,
+				295E53A51AB051FD002EA6A4 /* CollectionUtils.h in Headers */,
+				295E53B31AB051FD002EA6A4 /* Logging.h in Headers */,
 				27EEA5B213D6051600D7ACA4 /* CouchDesignDocument.h in Headers */,
 				27CB6559143A7F6B00EEA1F2 /* CouchDesignDocument_Embedded.h in Headers */,
+				295E53CF1AB051FD002EA6A4 /* MYRegexUtils.h in Headers */,
 				27EEA5B313D6051800D7ACA4 /* CouchQuery.h in Headers */,
 				27EEA5B413D6051B00D7ACA4 /* CouchResource.h in Headers */,
 				27EEA5AD13D6050600D7ACA4 /* CouchServer.h in Headers */,
 				27FA35E51623E27A007501CA /* CouchEmbeddedServer.h in Headers */,
+				295E54021AB05328002EA6A4 /* CouchJSON.h in Headers */,
 				27E9C61E14A0F6A300F67966 /* CouchTouchDBServer.h in Headers */,
+				295E53D31AB051FD002EA6A4 /* MYStreamUtils.h in Headers */,
+				295E54041AB05340002EA6A4 /* CouchMisc.h in Headers */,
+				295E53DB1AB051FD002EA6A4 /* MYURLUtils.h in Headers */,
 				27EEA5AE13D6050C00D7ACA4 /* CouchDatabase.h in Headers */,
+				295E53BB1AB051FD002EA6A4 /* MYBlockUtils.h in Headers */,
 				27FA35E31623E25A007501CA /* CouchTouchDBDatabase.h in Headers */,
 				279CCBF613F9955900C38C82 /* CouchReplication.h in Headers */,
 				27E4DD14141959EB00A3D8F6 /* CouchPersistentReplication.h in Headers */,
 				27C7280013EB238900C7ADF5 /* CouchUITableSource.h in Headers */,
 				27938C61140C01D200117675 /* CouchDynamicObject.h in Headers */,
+				295E53AD1AB051FD002EA6A4 /* ExceptionUtils.h in Headers */,
 				27938C63140C01DC00117675 /* CouchModel.h in Headers */,
+				295E53FB1AB051FD002EA6A4 /* GTMNSData+zlib.h in Headers */,
+				295E540A1AB053B7002EA6A4 /* RESTBase64.h in Headers */,
 				279CE39214D1F761009F3FA6 /* CouchModelFactory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -726,7 +924,7 @@
 			name = "iOS Tests";
 			productName = "iOS LibraryTests";
 			productReference = 2739BF3613BCE53C004829CD /* iOS Tests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		2784E1AE13CE5249009CC5C8 /* Demo-Shopping */ = {
 			isa = PBXNativeTarget;
@@ -781,7 +979,7 @@
 			name = "Mac Tests";
 			productName = CouchAPITests;
 			productReference = 27CDEC0313C67C9B00C979BB /* Mac Tests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 		27EEA59713D602EA00D7ACA4 /* iOS Framework */ = {
 			isa = PBXNativeTarget;
@@ -827,7 +1025,8 @@
 		08FB7793FE84155DC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastTestingUpgradeCheck = 0610;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Couchbase, Inc.";
 			};
 			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "CouchCocoa" */;
@@ -874,6 +1073,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				295E53E41AB051FD002EA6A4 /* MYUtilities_Release.xcconfig in Resources */,
+				295E53DE1AB051FD002EA6A4 /* MYUtilities.xcconfig in Resources */,
+				295E53E01AB051FD002EA6A4 /* MYUtilities_Debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -889,6 +1091,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				295E53E51AB051FD002EA6A4 /* MYUtilities_Release.xcconfig in Resources */,
+				295E53DF1AB051FD002EA6A4 /* MYUtilities.xcconfig in Resources */,
+				295E53E11AB051FD002EA6A4 /* MYUtilities_Debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,27 +1172,41 @@
 			files = (
 				2739BF5713BCE5BD004829CD /* CouchDocument.m in Sources */,
 				2739BF5813BCE5BD004829CD /* CouchRevision.m in Sources */,
+				295E54161AB053FD002EA6A4 /* MYRegexUtils.m in Sources */,
 				2739BF5913BCE5BD004829CD /* CouchAttachment.m in Sources */,
+				295E54111AB053FD002EA6A4 /* MYBlockUtils.m in Sources */,
 				2739BF5A13BCE5BD004829CD /* CouchDesignDocument.m in Sources */,
+				295E540C1AB053FD002EA6A4 /* CollectionUtils.m in Sources */,
 				2739BF5B13BCE5BD004829CD /* CouchQuery.m in Sources */,
 				2739BF5C13BCE5BD004829CD /* CouchResource.m in Sources */,
+				295E54071AB05368002EA6A4 /* CouchRemoteRequest.m in Sources */,
 				2739BF5D13BCE5BD004829CD /* CouchChangeTracker.m in Sources */,
 				2739BF5013BCE560004829CD /* RESTResource.m in Sources */,
+				295E54011AB05311002EA6A4 /* CouchAuthorizer.m in Sources */,
+				295E54141AB053FD002EA6A4 /* MYErrorUtils.m in Sources */,
+				295E540F1AB053FD002EA6A4 /* Logging.m in Sources */,
+				295E540B1AB053BD002EA6A4 /* RESTBase64.m in Sources */,
 				2739BF5113BCE562004829CD /* RESTOperation.m in Sources */,
 				2739BF5213BCE565004829CD /* RESTBody.m in Sources */,
 				2739BF5313BCE568004829CD /* RESTCache.m in Sources */,
 				2739BF5413BCE56D004829CD /* RESTInternal.m in Sources */,
 				2739BF5513BCE5A5004829CD /* CouchServer.m in Sources */,
+				295E540E1AB053FD002EA6A4 /* ExceptionUtils.m in Sources */,
 				2739BF5613BCE5A8004829CD /* CouchDatabase.m in Sources */,
 				27C727FF13EB237200C7ADF5 /* CouchUITableSource.m in Sources */,
+				295E54051AB0534D002EA6A4 /* CouchMisc.m in Sources */,
+				295E541E1AB05409002EA6A4 /* GTMNSData+zlib.m in Sources */,
 				279CCBF513F9823F00C38C82 /* CouchReplication.m in Sources */,
 				27DB821F1408202000E57444 /* CouchDynamicObject.m in Sources */,
+				295E54031AB05331002EA6A4 /* CouchJSON.m in Sources */,
+				295E54091AB05382002EA6A4 /* CouchStatus.m in Sources */,
+				295E54171AB053FD002EA6A4 /* MYStreamUtils.m in Sources */,
 				27DB82281408225300E57444 /* CouchModel.m in Sources */,
 				27E4DD0F141921E000A3D8F6 /* CouchPersistentReplication.m in Sources */,
-				279276F114215D5600002958 /* RESTBase64.m in Sources */,
+				295E541C1AB053FD002EA6A4 /* Test.m in Sources */,
 				27CB654F143A746700EEA1F2 /* CouchDesignDocument_Embedded.m in Sources */,
-				279906D5149930DA003D4338 /* CouchConnectionChangeTracker.m in Sources */,
 				279906D9149930DA003D4338 /* CouchSocketChangeTracker.m in Sources */,
+				295E54191AB053FD002EA6A4 /* MYURLUtils.m in Sources */,
 				27E9C61C14A0EECC00F67966 /* CouchTouchDBServer.m in Sources */,
 				27AE23B0147C95D3005AAB52 /* CouchModelFactory.m in Sources */,
 				2783A0C7156D616800DC8692 /* CouchEmbeddedServer.m in Sources */,
@@ -1021,28 +1240,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29A5A0E21AAF4BF2000625BC /* RESTBase64.m in Sources */,
 				27CDEC1913C67D0300C979BB /* RESTResource.m in Sources */,
 				27CDEC1A13C67D0300C979BB /* RESTOperation.m in Sources */,
+				295E53AE1AB051FD002EA6A4 /* ExceptionUtils.m in Sources */,
+				295E53DC1AB051FD002EA6A4 /* MYURLUtils.m in Sources */,
 				27CDEC1B13C67D0300C979BB /* RESTBody.m in Sources */,
+				295E536D1AAF668E002EA6A4 /* CouchJSON.m in Sources */,
 				27CDEC1C13C67D0300C979BB /* RESTCache.m in Sources */,
+				295E53711AB04F6B002EA6A4 /* CouchRemoteRequest.m in Sources */,
 				27CDEC1D13C67D0300C979BB /* RESTInternal.m in Sources */,
 				27CDEC1E13C67D0300C979BB /* CouchServer.m in Sources */,
 				27CDEC1F13C67D0300C979BB /* CouchDatabase.m in Sources */,
 				27CDEC2013C67D0300C979BB /* CouchDocument.m in Sources */,
 				27CDEC2113C67D0300C979BB /* CouchRevision.m in Sources */,
+				295E53D41AB051FD002EA6A4 /* MYStreamUtils.m in Sources */,
 				27CDEC2213C67D0300C979BB /* CouchAttachment.m in Sources */,
+				295E53BC1AB051FD002EA6A4 /* MYBlockUtils.m in Sources */,
+				295E53B41AB051FD002EA6A4 /* Logging.m in Sources */,
+				295E53C81AB051FD002EA6A4 /* MYErrorUtils.m in Sources */,
 				27CDEC2313C67D0300C979BB /* CouchDesignDocument.m in Sources */,
+				29A5A0E61AAF4C7D000625BC /* CouchMisc.m in Sources */,
 				27CDEC2413C67D0300C979BB /* CouchQuery.m in Sources */,
 				27CDEC2513C67D0300C979BB /* CouchResource.m in Sources */,
+				29A5A0DE1AAF4B36000625BC /* CouchAuthorizer.m in Sources */,
+				295E53FC1AB051FD002EA6A4 /* GTMNSData+zlib.m in Sources */,
 				27CDEC2613C67D0300C979BB /* CouchChangeTracker.m in Sources */,
+				295E53F41AB051FD002EA6A4 /* Test.m in Sources */,
 				279CCBF413F9823F00C38C82 /* CouchReplication.m in Sources */,
 				27DB821E1408202000E57444 /* CouchDynamicObject.m in Sources */,
+				295E53A61AB051FD002EA6A4 /* CollectionUtils.m in Sources */,
 				27DB82271408225300E57444 /* CouchModel.m in Sources */,
 				27E4DD0E141921E000A3D8F6 /* CouchPersistentReplication.m in Sources */,
-				279276F014215D5600002958 /* RESTBase64.m in Sources */,
+				295E53691AAF6516002EA6A4 /* CouchStatus.m in Sources */,
 				27CB654E143A746700EEA1F2 /* CouchDesignDocument_Embedded.m in Sources */,
-				279906D4149930DA003D4338 /* CouchConnectionChangeTracker.m in Sources */,
 				279906D8149930DA003D4338 /* CouchSocketChangeTracker.m in Sources */,
+				295E53D01AB051FD002EA6A4 /* MYRegexUtils.m in Sources */,
 				27E9C61B14A0EECC00F67966 /* CouchTouchDBServer.m in Sources */,
 				27AE23AF147C95D3005AAB52 /* CouchModelFactory.m in Sources */,
 				279CA784156FE4B700871563 /* CouchTouchDBDatabase.m in Sources */,
@@ -1102,21 +1335,30 @@
 		1DEB927908733DD40010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CURRENT_PROJECT_VERSION = 14;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Couch/CouchPrefix.pch;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -1128,20 +1370,29 @@
 		1DEB927A08733DD40010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CURRENT_PROJECT_VERSION = 14;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Couch/CouchPrefix.pch;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
@@ -1196,7 +1447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/iOS_Library.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1206,7 +1457,6 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_THUMB_SUPPORT = NO;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CouchCocoa;
 				SDKROOT = iphoneos;
@@ -1218,11 +1468,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/iOS_Library.dst;
 				GCC_THUMB_SUPPORT = NO;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = CouchCocoa;
 				SDKROOT = iphoneos;
@@ -1235,7 +1484,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = i386;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1249,7 +1498,6 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = i386;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -1258,7 +1506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = i386;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1267,7 +1515,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = i386;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -1398,7 +1645,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-ios-universal";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1414,7 +1660,6 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "Resources/CouchCocoa-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = CouchCocoa;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1427,7 +1672,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)-ios-universal";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;

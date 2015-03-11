@@ -48,7 +48,7 @@ static NSString* const kChildURL = @"http://127.0.0.1:5984/_utils/image/logo.png
 
 - (void) testQueryEncoding {
     NSURL* url = [NSURL URLWithString: kParentURL];
-    RESTResource* parent = [[[RESTResource alloc] initWithURL: url] autorelease];
+    RESTResource* parent = [[RESTResource alloc] initWithURL: url];
     NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
                             @"value1", @"?key1",
                             @"/%@value2*?", @"?key2",
@@ -70,13 +70,13 @@ static NSString* const kChildURL = @"http://127.0.0.1:5984/_utils/image/logo.png
 {
     // Test a root resource:
     NSURL* url = [NSURL URLWithString: kParentURL];
-    RESTResource* parent = [[[RESTResource alloc] initWithURL: url] autorelease];
+    RESTResource* parent = [[RESTResource alloc] initWithURL: url];
     STAssertEqualObjects(parent.URL, url, @"Server URL property is wrong");
     STAssertEqualObjects(parent.parent, nil, @"Server parent property is wrong");
     STAssertEqualObjects(parent.relativePath, nil, @"Server relativePath property is wrong");
     
     // Test child resource:
-    RESTResource* child = [[[RESTResource alloc] initWithParent: parent relativePath: kChildPath] autorelease];
+    RESTResource* child = [[RESTResource alloc] initWithParent: parent relativePath: kChildPath];
     STAssertEqualObjects(child.parent, parent, @"Child parent property is wrong");
     STAssertEqualObjects(child.relativePath, kChildPath, @"Child relativePath property is wrong");
     STAssertEqualObjects(child.URL, [NSURL URLWithString: kChildURL], nil);
@@ -110,11 +110,11 @@ static NSString* const kChildURL = @"http://127.0.0.1:5984/_utils/image/logo.png
 
 - (void)testMultipleWait {
     NSURL* url = [NSURL URLWithString: kParentURL];
-    RESTResource* parent = [[[RESTResource alloc] initWithURL: url] autorelease];
+    RESTResource* parent = [[RESTResource alloc] initWithURL: url];
     parent.tracksActiveOperations = YES;
     for (int i=0; i<5; i++)
         [[parent GET] start];
-    NSSet* activeOps = [[parent.activeOperations copy] autorelease];
+    NSSet* activeOps = [parent.activeOperations copy];
     STAssertEquals(activeOps.count, (NSUInteger)5, nil);
     
     [RESTOperation wait: parent.activeOperations];
@@ -128,7 +128,7 @@ static NSString* const kChildURL = @"http://127.0.0.1:5984/_utils/image/logo.png
 
 - (void) testRetry {
     NSURL* url = [NSURL URLWithString: @"http://127.0.0.1:3"];
-    RESTResource* resource = [[[RESTResource alloc] initWithURL: url] autorelease];
+    RESTResource* resource = [[RESTResource alloc] initWithURL: url];
     RESTOperation* op = [resource GET];
     STAssertFalse([op wait], nil);
     STAssertTrue(op.retryCount > 0, nil);
@@ -161,7 +161,6 @@ static NSString* const kChildURL = @"http://127.0.0.1:5984/_utils/image/logo.png
     STAssertEqualObjects(body.contentType, nil, nil);
     STAssertEqualObjects(body.eTag, nil, nil);
     STAssertEqualObjects(body.lastModified, nil, nil);
-    [body release];
 }
 
 - (void) testEmptyMutableBody {
@@ -171,7 +170,6 @@ static NSString* const kChildURL = @"http://127.0.0.1:5984/_utils/image/logo.png
     STAssertEqualObjects(body.contentType, nil, nil);
     STAssertEqualObjects(body.eTag, nil, nil);
     STAssertEqualObjects(body.lastModified, nil, nil);
-    [body release];
 }
 
 - (void) testMutateEmptyBody {
@@ -182,7 +180,6 @@ static NSString* const kChildURL = @"http://127.0.0.1:5984/_utils/image/logo.png
     STAssertEqualObjects(body.content, data, nil);
     STAssertEqualObjects(body.headers, [NSDictionary dictionaryWithObject: @"text/plain; charset=utf-8" forKey: @"Content-Type"], nil);
     STAssertEqualObjects(body.contentType, @"text/plain; charset=utf-8", nil);
-    [body release];
 }
 
 - (void) testBase64 {

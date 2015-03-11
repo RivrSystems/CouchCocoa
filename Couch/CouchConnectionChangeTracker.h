@@ -10,13 +10,14 @@
 
 
 /** CouchChangeTracker that uses a regular NSURLConnection.
-    This unfortunately doesn't work with regular CouchDB in continuous mode, apparently due to some bug in CFNetwork. */
+ This unfortunately doesn't work with regular CouchDB in continuous mode, apparently due to some bug in CFNetwork. */
 @interface CouchConnectionChangeTracker : CouchChangeTracker
 {
-    @private
+@private
     NSURLConnection* _connection;
-    int _status;
     NSMutableData* _inputBuffer;
+    CFAbsoluteTime _startTime;
+    bool _challenged;
 }
 
 @end

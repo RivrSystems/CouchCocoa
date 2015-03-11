@@ -36,8 +36,8 @@ static const NSUInteger kDefaultRetainLimit = 50;
         CFDictionaryValueCallBacks valueCB = kCFTypeDictionaryValueCallBacks;
         valueCB.retain = NULL;
         valueCB.release = NULL;
-        _map = (NSMutableDictionary*)CFDictionaryCreateMutable(
-                       NULL, 100, &kCFCopyStringDictionaryKeyCallBacks, &valueCB);
+        _map = (NSMutableDictionary*)CFBridgingRelease(CFDictionaryCreateMutable(
+                       NULL, 100, &kCFCopyStringDictionaryKeyCallBacks, &valueCB));
 #else
         // Construct an NSMapTable that doesn't retain its values:
         _map = [[NSMapTable alloc] initWithKeyOptions: NSPointerFunctionsStrongMemory |
@@ -58,13 +58,6 @@ static const NSUInteger kDefaultRetainLimit = 50;
 - (void)dealloc {
     for (RESTResource* doc in _map.objectEnumerator)
         doc.owningCache = nil;
-    [_map release];
-    // Calling -release on the cache right now is dangerous because it might already be
-    // flushing itself (which may have triggered deallocation of my owner and hence myself),
-    // and deallocing it in the midst of that will cause it to deadlock. So delay the release.
-    // See <https://github.com/couchbaselabs/TouchDB-iOS/issues/216>
-    [_cache autorelease];
-    [super dealloc];
 }
 
 
@@ -76,8 +69,6 @@ static const NSUInteger kDefaultRetainLimit = 50;
     [_map setObject: resource forKey: key];
     if (_cache)
         [_cache setObject: resource forKey: key];
-    else
-        [[resource retain] autorelease];
 }
 
 
