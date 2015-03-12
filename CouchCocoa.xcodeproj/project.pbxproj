@@ -208,6 +208,11 @@
 		295E54191AB053FD002EA6A4 /* MYURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53901AB051FD002EA6A4 /* MYURLUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		295E541C1AB053FD002EA6A4 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E539C1AB051FD002EA6A4 /* Test.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		295E541E1AB05409002EA6A4 /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 295E53A21AB051FD002EA6A4 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2983C9131AB102C50058964E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2983C9121AB102C50058964E /* Security.framework */; };
+		2983C9151AB1037B0058964E /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2983C9141AB1037B0058964E /* CoreServices.framework */; };
+		2983C9171AB103830058964E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2983C9161AB103830058964E /* SystemConfiguration.framework */; };
+		2983C9191AB1038D0058964E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2983C9181AB1038D0058964E /* libz.dylib */; };
+		2983C91B1AB103970058964E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2983C91A1AB103970058964E /* libsqlite3.dylib */; };
 		29A5A0DD1AAF4B36000625BC /* CouchAuthorizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A5A0DB1AAF4B36000625BC /* CouchAuthorizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29A5A0DE1AAF4B36000625BC /* CouchAuthorizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A5A0DC1AAF4B36000625BC /* CouchAuthorizer.m */; };
 		29A5A0E11AAF4BF2000625BC /* RESTBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 29A5A0DF1AAF4BF2000625BC /* RESTBase64.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -237,6 +242,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2739BF2A13BCE53B004829CD;
 			remoteInfo = "iOS Library";
+		};
+		2983C9101AB101010058964E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27EF14761396D7BA0052913E;
+			remoteInfo = "Demo-Addresses";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -392,6 +404,11 @@
 		295E53A01AB051FD002EA6A4 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		295E53A11AB051FD002EA6A4 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSData+zlib.h"; sourceTree = "<group>"; };
 		295E53A21AB051FD002EA6A4 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSData+zlib.m"; sourceTree = "<group>"; };
+		2983C9121AB102C50058964E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		2983C9141AB1037B0058964E /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		2983C9161AB103830058964E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2983C9181AB1038D0058964E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		2983C91A1AB103970058964E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		29A5A0DB1AAF4B36000625BC /* CouchAuthorizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouchAuthorizer.h; sourceTree = "<group>"; };
 		29A5A0DC1AAF4B36000625BC /* CouchAuthorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouchAuthorizer.m; sourceTree = "<group>"; };
 		29A5A0DF1AAF4BF2000625BC /* RESTBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTBase64.h; sourceTree = "<group>"; };
@@ -435,6 +452,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2983C91B1AB103970058964E /* libsqlite3.dylib in Frameworks */,
+				2983C9191AB1038D0058964E /* libz.dylib in Frameworks */,
+				2983C9171AB103830058964E /* SystemConfiguration.framework in Frameworks */,
+				2983C9151AB1037B0058964E /* CoreServices.framework in Frameworks */,
+				2983C9131AB102C50058964E /* Security.framework in Frameworks */,
 				274EB8D014490145001B7DD0 /* AppKit.framework in Frameworks */,
 				27CDEC2813C67D1100C979BB /* Foundation.framework in Frameworks */,
 			);
@@ -554,6 +576,11 @@
 		272E9D8213A2EBDF009F18E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2983C91A1AB103970058964E /* libsqlite3.dylib */,
+				2983C9181AB1038D0058964E /* libz.dylib */,
+				2983C9161AB103830058964E /* SystemConfiguration.framework */,
+				2983C9141AB1037B0058964E /* CoreServices.framework */,
+				2983C9121AB102C50058964E /* Security.framework */,
 				272E9D8313A2EBDF009F18E9 /* SenTestingKit.framework */,
 				27A5792913974B65002776DB /* Cocoa.framework */,
 				2739BF2C13BCE53B004829CD /* Foundation.framework */,
@@ -920,6 +947,7 @@
 			);
 			dependencies = (
 				2739BF3E13BCE53C004829CD /* PBXTargetDependency */,
+				2983C9111AB101010058964E /* PBXTargetDependency */,
 			);
 			name = "iOS Tests";
 			productName = "iOS LibraryTests";
@@ -1329,6 +1357,11 @@
 			target = 2739BF2A13BCE53B004829CD /* iOS Library */;
 			targetProxy = 27EEA5A513D604C000D7ACA4 /* PBXContainerItemProxy */;
 		};
+		2983C9111AB101010058964E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27EF14761396D7BA0052913E /* Demo-Addresses */;
+			targetProxy = 2983C9101AB101010058964E /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -1565,6 +1598,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1590,6 +1624,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1610,6 +1645,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
@@ -1630,6 +1666,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
