@@ -29,8 +29,8 @@ typedef enum {
 /** Tracks a CouchDB replication. Can be used to observe its progress. */
 @interface CouchReplication : NSObject
 {
-    CouchDatabase* _database;
-    NSURL* _remote;
+    CouchDatabase* __weak _database;
+    NSURL* __weak _remote;
     bool _pull, _createTarget, _continuous;
     NSString* _filter;
     NSDictionary* _filterParams;
@@ -43,14 +43,14 @@ typedef enum {
     unsigned _completed, _total;
     CouchReplicationMode _mode;
     NSError* _error;
-    NSArray* _currentRequests;
+    NSArray* __weak _currentRequests;
 }
 
 /** The local database being replicated to/from. */
-@property (nonatomic, readonly) CouchDatabase* localDatabase;
+@property (weak, nonatomic, readonly) CouchDatabase* localDatabase;
 
 /** The URL of the remote database. */
-@property (nonatomic, readonly) NSURL* remoteURL;
+@property (weak, nonatomic, readonly) NSURL* remoteURL;
 
 /** Does the replication pull from (as opposed to push to) the target? */
 @property (nonatomic, readonly) bool pull;
@@ -102,10 +102,10 @@ typedef enum {
 /** The total number of changes to be processed, if the task is active, else 0 (observable). */
 @property (nonatomic, readonly) unsigned total;
 
-@property (nonatomic, readonly, retain) NSError* error;
+@property (nonatomic, readonly, strong) NSError* error;
 
 @property (nonatomic, readonly) CouchReplicationMode mode;
 
-@property (nonatomic, readonly) NSArray* currentRequests;
+@property (weak, nonatomic, readonly) NSArray* currentRequests;
 
 @end

@@ -27,14 +27,6 @@ Pre-built libraries are available. The latest build is always at [this address](
 
 Xcode 4.3 or later, with the SDK for iOS 4.3 or later.
 
-### One-Time Repository Setup
-
-If you cloned the CouchCocoa Git repository, as opposed to downloading a precompiled framework, then you'll next need to initialize Git "submodules". This will clone the dependency JSONKit into the "vendor" subfolder:
-
-    cd CouchCocoa
-    git submodule init
-    git submodule update
-
 ### Running The iOS Demo App
 
 Our iOS demo, "Grocery Sync", has [its own GitHub repository][12]. Check it out and look at its README for instructions.

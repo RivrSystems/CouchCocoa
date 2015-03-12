@@ -3,7 +3,15 @@
 //
 
 #ifdef __OBJC__
+
 #import <Foundation/Foundation.h>
+
+#import "CouchJSON.h"
+
+#import "CollectionUtils.h"
+#import "Logging.h"
+#import "Test.h"
+
 #endif
 
 #define COUCHCOCOA_IMPL

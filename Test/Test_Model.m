@@ -14,10 +14,10 @@
 @interface TestModel : CouchModel
 @property (readwrite,copy) NSString *name;
 @property (readwrite) int grade;
-@property (readwrite, retain) NSData* permanentRecord;
-@property (readwrite, retain) NSDate* birthday;
-@property (readwrite, retain) NSArray* otherNames;
-@property (readwrite, retain) TestModel* buddy;
+@property (readwrite, strong) NSData* permanentRecord;
+@property (readwrite, strong) NSDate* birthday;
+@property (readwrite, strong) NSArray* otherNames;
+@property (readwrite, strong) TestModel* buddy;
 @end
 
 @implementation TestModel

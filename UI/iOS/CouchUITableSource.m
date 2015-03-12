@@ -35,10 +35,7 @@
 
 
 - (void)dealloc {
-    [_rows release];
     [_query removeObserver: self forKeyPath: @"rows"];
-    [_query release];
-    [super dealloc];
 }
 
 
@@ -74,14 +71,6 @@
 }
 
 
-- (id) tellDelegate: (SEL)selector withObject: (id)object {
-    id delegate = _tableView.delegate;
-    if ([delegate respondsToSelector: selector])
-        return [delegate performSelector: selector withObject: self withObject: object];
-    return nil;
-}
-
-
 #pragma mark -
 #pragma mark QUERY HANDLING:
 
@@ -93,8 +82,7 @@
 - (void) setQuery:(CouchLiveQuery *)query {
     if (query != _query) {
         [_query removeObserver: self forKeyPath: @"rows"];
-        [_query autorelease];
-        _query = [query retain];
+        _query = query;
         [_query addObserver: self forKeyPath: @"rows" options: 0 context: NULL];
         [self reloadFromQuery];
     }
@@ -104,10 +92,13 @@
 -(void) reloadFromQuery {
     CouchQueryEnumerator* rowEnum = _query.rows;
     if (rowEnum) {
-        NSArray *oldRows = [_rows retain];
-        [_rows release];
+        NSArray *oldRows = _rows;
         _rows = [rowEnum.allObjects mutableCopy];
-        [self tellDelegate: @selector(couchTableSource:willUpdateFromQuery:) withObject: _query];
+        
+        if (_tableView.delegate && [_tableView.delegate respondsToSelector:@selector(couchTableSource:willUpdateFromQuery:)]) {
+            id<CouchUITableDelegate> delegate = (id<CouchUITableDelegate>)_tableView.delegate;
+            [delegate couchTableSource:self willUpdateFromQuery:_query];
+        }
         
         id delegate = _tableView.delegate;
         SEL selector = @selector(couchTableSource:updateFromQuery:previousRows:);
@@ -118,7 +109,6 @@
         } else {
             [self.tableView reloadData];
         }
-        [oldRows release];
     }
 }
 
@@ -161,15 +151,20 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Allow the delegate to create its own cell:
-    UITableViewCell* cell = [self tellDelegate: @selector(couchTableSource:cellForRowAtIndexPath:)
-                                    withObject: indexPath];
+    UITableViewCell* cell;
+    
+    if (_tableView.delegate && [_tableView.delegate respondsToSelector:@selector(couchTableSource:cellForRowAtIndexPath:)]) {
+        
+        id<CouchUITableDelegate> delegate = (id<CouchUITableDelegate>)_tableView.delegate;
+        cell = [delegate couchTableSource:self cellForRowAtIndexPath:indexPath];
+    }
+    
     if (!cell) {
         // ...if it doesn't, create a cell for it:
         cell = [tableView dequeueReusableCellWithIdentifier: @"CouchUITableDelegate"];
         if (!cell)
-            cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault
-                                           reuseIdentifier: @"CouchUITableDelegate"]
-                    autorelease];
+            cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault
+                                           reuseIdentifier: @"CouchUITableDelegate"];
         
         CouchQueryRow* row = [self rowAtIndex: indexPath.row];
         cell.textLabel.text = [self labelForRow: row];
@@ -204,7 +199,14 @@
 - (void) checkDelete: (RESTOperation*)op {
     if (!op.isSuccessful) {
         // If the delete failed, undo the table row deletion by reloading from the db:
-        [self tellDelegate: @selector(couchTableSource:operationFailed:) withObject: op];
+        
+        if (_tableView.delegate && [_tableView.delegate
+                                    respondsToSelector:@selector(couchTableSource:operationFailed:)]) {
+            
+            id<CouchUITableDelegate> delegate = (id<CouchUITableDelegate>)_tableView.delegate;
+            [delegate couchTableSource:self operationFailed:op];
+        }
+        
         [self reloadFromQuery];
     }
 }

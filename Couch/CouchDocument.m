@@ -42,10 +42,6 @@ NSString* const kCouchDocumentChangeNotification = @"CouchDocumentChange";
 - (void)dealloc {
     if (_modelObject)
         Warn(@"Deallocing %@ while it still has a modelObject %@", self, _modelObject);
-    [_currentRevisionID release];
-    [_currentRevision release];
-    [_documentID release];
-    [super dealloc];
 }
 
 
@@ -57,7 +53,7 @@ NSString* const kCouchDocumentChangeNotification = @"CouchDocumentChange";
 
 
 - (NSString*) abbreviatedID {
-    NSMutableString* abbrev = [[self.documentID mutableCopy] autorelease];
+    NSMutableString* abbrev = [self.documentID mutableCopy];
     if (abbrev.length > 10)
         [abbrev replaceCharactersInRange: NSMakeRange(4, abbrev.length - 8) withString: @".."];
     return abbrev;
@@ -82,9 +78,7 @@ NSString* const kCouchDocumentChangeNotification = @"CouchDocumentChange";
 - (void) setCurrentRevisionID:(NSString *)revisionID {
     NSParameterAssert(revisionID);
     if (![revisionID isEqualToString: _currentRevisionID]) {
-        [_currentRevisionID autorelease];
         _currentRevisionID = [revisionID copy];
-        [_currentRevision autorelease];
         _currentRevision = nil;
     }
 }
@@ -94,7 +88,7 @@ NSString* const kCouchDocumentChangeNotification = @"CouchDocumentChange";
     NSParameterAssert(revisionID);
     if ([revisionID isEqualToString: _currentRevisionID])
         return self.currentRevision;
-    return [[[CouchRevision alloc] initWithDocument: self revisionID: revisionID] autorelease];
+    return [[CouchRevision alloc] initWithDocument: self revisionID: revisionID];
 }
 
 
@@ -132,7 +126,6 @@ NSString* const kCouchDocumentChangeNotification = @"CouchDocumentChange";
 
 - (void) refresh {
     if (!_currentRevision) {
-        [_currentRevisionID release];
         _currentRevisionID = nil;
         return;
     }
@@ -143,9 +136,7 @@ NSString* const kCouchDocumentChangeNotification = @"CouchDocumentChange";
         return;
 
     // We got a different revision, so make it the current one:
-    [_currentRevision autorelease];
     _currentRevision = [[CouchRevision alloc] initWithOperation: op];
-    [_currentRevisionID autorelease];
     _currentRevisionID = [_currentRevision.revisionID copy];
 }
 
@@ -351,7 +342,7 @@ NSString* const kCouchDocumentChangeNotification = @"CouchDocumentChange";
         NSString* revision = _currentRevisionID;
         if (revision) {
             // Add a ?rev= query param with the current document revision:
-            NSMutableDictionary* nuParams = [[parameters mutableCopy] autorelease];
+            NSMutableDictionary* nuParams = [parameters mutableCopy];
             if (!nuParams)
                 nuParams = [NSMutableDictionary dictionary];
             [nuParams setObject: revision forKey: @"?rev"];
@@ -461,7 +452,6 @@ NSString* const kCouchDocumentChangeNotification = @"CouchDocumentChange";
         if (rev)
             [fullProperties setObject:rev forKey:@"_rev"];
         [self updateFromSaveResponse: result withProperties: fullProperties];
-        [fullProperties release];
     }
 }
 
