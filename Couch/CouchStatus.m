@@ -14,9 +14,7 @@
 //  and limitations under the License.
 
 #import "CouchStatus.h"
-
-
-NSString* const CouchHTTPErrorDomain = @"CouchHTTP";
+#import "RESTOperation.h"
 
 
 struct StatusMapEntry {
