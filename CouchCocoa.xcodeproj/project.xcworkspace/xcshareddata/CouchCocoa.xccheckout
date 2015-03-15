@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>03DDDFB1-B8FD-4850-85CF-8A22882BF65A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CouchCocoa</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6B22C7FA8DBFCA8BC6DD02ABE3F7D3BBBDA9F9A4</key>
+		<string>https://github.com/RivrSystems/CouchCocoa.git</string>
+		<key>EDD5A95C0B9BA456AC83DA491C4680B9358547CF</key>
+		<string>https://github.com/snej/MYUtilities.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CouchCocoa.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6B22C7FA8DBFCA8BC6DD02ABE3F7D3BBBDA9F9A4</key>
+		<string>../..</string>
+		<key>EDD5A95C0B9BA456AC83DA491C4680B9358547CF</key>
+		<string>../..Vendor/MYUtilities</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/RivrSystems/CouchCocoa.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6B22C7FA8DBFCA8BC6DD02ABE3F7D3BBBDA9F9A4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6B22C7FA8DBFCA8BC6DD02ABE3F7D3BBBDA9F9A4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CouchCocoa</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EDD5A95C0B9BA456AC83DA491C4680B9358547CF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MYUtilities</string>
+		</dict>
+	</array>
+</dict>
+</plist>

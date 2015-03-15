@@ -409,6 +409,7 @@
 		2983C9161AB103830058964E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2983C9181AB1038D0058964E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		2983C91A1AB103970058964E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2983C91D1AB18D9C0058964E /* CouchCocoa.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = CouchCocoa.podspec; sourceTree = "<group>"; };
 		29A5A0DB1AAF4B36000625BC /* CouchAuthorizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouchAuthorizer.h; sourceTree = "<group>"; };
 		29A5A0DC1AAF4B36000625BC /* CouchAuthorizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouchAuthorizer.m; sourceTree = "<group>"; };
 		29A5A0DF1AAF4BF2000625BC /* RESTBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTBase64.h; sourceTree = "<group>"; };
@@ -495,6 +496,7 @@
 		08FB7794FE84155DC02AAC07 /* Couch */ = {
 			isa = PBXGroup;
 			children = (
+				2983C91D1AB18D9C0058964E /* CouchCocoa.podspec */,
 				295E53721AB051FD002EA6A4 /* Vendor */,
 				278B231E1391724E00DDD950 /* REST */,
 				08FB7795FE84155DC02AAC07 /* Couch */,
