@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-version = '1.1'
+version = '2.0'
 
 s.name     = 'CouchCocoa'
 s.version  = version
@@ -11,7 +11,7 @@ s.author   = { 'Jens Alfke' => 'jens@couchbase.com' }
 
 s.platform = :ios
 
-s.source   = { :git => 'https://github.com/couchbaselabs/CouchCocoa.git', :tag => "v#{version}" }
+s.source   = { :git => 'https://github.com/RivrSystems/CouchCocoa.git', :tag => "v#{version}" }
 
 s.source_files = 'Couch', 'Model', 'REST', 'UI/iOS'
 s.compiler_flags = '-DCOUCHCOCOA_IMPL'
